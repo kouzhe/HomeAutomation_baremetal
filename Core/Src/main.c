@@ -105,10 +105,10 @@ int main(void)
     OLED_Clear();
     // 4. �ڵ�0�е�0ҳ��ӡһ���ַ�'A'
     OLED_PutChar(0, 0, 'A');
-    // 5. �ڵ�16�е�9ҳ��ӡһ���ַ�'Y'
+    // // 5. �ڵ�16�е�9ҳ��ӡһ���ַ�'Y'
     OLED_PutChar(0, 16, 'Y');
-    // 6. �ڵ�0�е�2ҳ��ӡһ���ַ���"Hello World!"
-    OLED_PrintString(2, 0, "KouZheBug6Wode");
+    // // 6. �ڵ�0�е�2ҳ��ӡһ���ַ���"Hello World!"
+    OLED_PrintString(2, 0, "testsssBug6Wodeabcdefghijklmnopqrstuvwzabcdefghijklmnopqrstuvwz");
 	
   /* USER CODE END 2 */
 
