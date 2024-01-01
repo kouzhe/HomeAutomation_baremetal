@@ -367,6 +367,7 @@ void OLED_Init(void)
 void OLED_SetPosition(uint8_t page, uint8_t col)
 {
     OLED_SetPageAddr_PAGE(page);
+    // OLED_SetDispStartLine(col); //bug fixed
     OLED_SetColAddr_PAGE(col);
 }
 
@@ -379,13 +380,11 @@ void OLED_SetPosition(uint8_t page, uint8_t col)
 */
 void OLED_Clear(void)
 {
-    uint8_t i = 0;
-    uint8_t buf[128] = {0};
-    
-    for(i=0; i<8; i++)
+    uint8_t au8buf[128] = {0}; // bug fixed
+    for (uint8_t u8PageNum = 0U; u8PageNum < 8U; u8PageNum++)
     {
-        OLED_SetPosition(i, 0);
-        OLED_WriteNBytes(&buf[0], 128);
+        OLED_SetPosition(u8PageNum, 0U);
+        OLED_WriteNBytes((uint8_t *) &au8buf[0], sizeof(au8buf));
     }
 }
 
@@ -400,11 +399,11 @@ void OLED_Clear(void)
 */
 void OLED_PutChar(uint8_t page, uint8_t col, char c)
 {
+    // 2-page scheme for a letter (8x16)
     OLED_SetPosition(page, col);
-    OLED_WriteNBytes((uint8_t*)&ascii_font[c][0], 8);
-    
+    OLED_WriteNBytes((uint8_t *) &ascii_font[c][0], 8U);
     OLED_SetPosition(page + 1, col);
-    OLED_WriteNBytes((uint8_t*)&ascii_font[c][8], 8);
+    OLED_WriteNBytes((uint8_t *) &ascii_font[c][8], 8U);
 }
 
 /*
@@ -418,20 +417,23 @@ void OLED_PutChar(uint8_t page, uint8_t col, char c)
 */
 void OLED_PrintString(uint8_t page, uint8_t col, char *str)
 {
-    while(*str != 0)
+    while (*str)
     {
-        OLED_PutChar(page, col, *str);
-        col += 8;
-        if(col > 127)
+       OLED_PutChar(page, col, *str);
+       col += 8U;
+
+       if (col > 127U)
+       {
+        col = 0U; // TBC to delete
+        page += 2U;
+
+        if (page > 7U)
         {
-            page += 2;
+            OLED_Clear();
+            page = 0U;
         }
-        
-        if(page > 7)
-        {
-            page = 0;
-        }
-        
-        str++;
+       }
+       str++;
     }
+    
 }
