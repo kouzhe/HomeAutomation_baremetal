@@ -6,6 +6,14 @@
     "driver_key.h": "c",
     "driver_i2c.h": "c",
     "stm32f1xx_hal.h": "c",
-    "driver_oled.h": "c"
+    "driver_oled.h": "c",
+    "stdint.h": "c",
+    "vcruntime.h": "c",
+    "stdbool.h": "c",
+    "led_device.h": "c",
+    "stdio.h": "c",
+    "cal_led_device.h": "c",
+    "kal_led_device.h": "c",
+    "led_test.h": "c"
   }
 }

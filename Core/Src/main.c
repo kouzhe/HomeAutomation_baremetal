@@ -23,10 +23,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "driver_led.h"
-#include "driver_key.h"
-#include "driver_i2c.h"
-#include "driver_oled.h"
+#include <led_test.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -67,8 +65,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-    uint8_t yin_A[] = {0x00,0x00,0xC0,0x38,0xE0,0x00,0x00,0x00,0x20,0x3C,0x23,0x02,0x02,0x27,0x38,0x20};/*"A",0*/
-    uint8_t yang_A[] = {0xFF,0xFF,0x3F,0xC7,0x1F,0xFF,0xFF,0xFF,0xDF,0xC3,0xDC,0xFD,0xFD,0xD8,0xC7,0xDF};/*"A",0*/
+  // TODO
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -93,23 +91,8 @@ int main(void)
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
 	
-	vLedWhiteOn();
-	vLedBlueOn();
-	vLedGreenOn();
-	
-	  // 1. ���³�ʼ��I2C������
-    // I2C_GPIO_ReInit();
-    // 2. ��ʼ��OLED  
-    OLED_Init();
-    // 3. ����
-    OLED_Clear();
-    // 4. �ڵ�0�е�0ҳ��ӡһ���ַ�'A'
-    OLED_PutChar(0, 0, 'A');
-    // // 5. �ڵ�16�е�9ҳ��ӡһ���ַ�'Y'
-    OLED_PutChar(0, 16, 'Y');
-    // // 6. �ڵ�0�е�2ҳ��ӡһ���ַ���"Hello World!"
-    OLED_PrintString(2, 0, "testsssBug6Wodeabcdefghijklmnopqrstuvwzabcdefghijklmnopqrstuvwz");
-	
+  // TODO (unitest code)
+  vLedTest();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -117,7 +100,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -1,0 +1,4 @@
+.vscode
+*.o
+/MDK-ARM
+HomeAutomation.ioc
