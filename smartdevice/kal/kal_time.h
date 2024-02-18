@@ -11,6 +11,6 @@
 #include <stdint.h>
 #include <led_device.h>
 
-void KAL_vDelay(uint8_t u8Time_mS);
+void KAL_vDelay(uint32_t u32Time_mS);
 
 #endif /* __KAL_TIME_H */

@@ -32,9 +32,9 @@ typedef struct Led_Device
   Led_tenStatus enStatus;
   int8_t (*Init)(struct Led_Device *pstLEDDevice);
   int8_t (*Control)(struct Led_Device *pstLEDDevice, Led_tenStatus enStatus);
-}Led_Device, *PLEDDevice;
+}Led_Device;
 
-PLEDDevice pstGetLedDevice(Led_tenColour enColour);
+Led_Device* pstGetLedDevice(Led_tenColour enColour);
 
 #endif /* __LED_DEVICE_H */
 

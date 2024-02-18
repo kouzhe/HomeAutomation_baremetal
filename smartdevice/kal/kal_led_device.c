@@ -12,12 +12,12 @@
 
 int8_t KAL_i8LedDeviceInit (struct Led_Device *pstLEDDevice)
 {
-	if (!pstLEDDevice)
+	if (pstLEDDevice)
 		return CAL_i8LedDeviceInit(pstLEDDevice);
 }
 
 int8_t KAL_i8LedDeviceControl (struct Led_Device *pstLEDDevice, Led_tenStatus enStatus)
 {
-		if ((!pstLEDDevice) && (enStatus >= Led_tenStatus_Off) && (enStatus < Led_tenStatus_Max))
+		if ((pstLEDDevice) && (enStatus >= Led_tenStatus_Off) && (enStatus < Led_tenStatus_Max))
 			return CAL_i8LedDeviceControl(pstLEDDevice, enStatus);
 }

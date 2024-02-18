@@ -24,6 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <led_test.h>
+#include <fan_test.h>
 
 /* USER CODE END Includes */
 
@@ -93,6 +94,7 @@ int main(void)
 	
   // TODO (unitest code)
   vLedTest();
+  vFanTest();
   /* USER CODE END 2 */
 
   /* Infinite loop */

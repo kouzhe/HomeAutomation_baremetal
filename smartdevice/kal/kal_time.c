@@ -8,7 +8,7 @@
 #include <kal_time.h>
 #include <cal_time.h>
 
-void KAL_vDelay(uint8_t u8Time_mS)
+void KAL_vDelay(uint32_t u32Time_mS)
 {
-	CAL_vDelay(u8Time_mS);
+	CAL_vDelay(u32Time_mS);
 }

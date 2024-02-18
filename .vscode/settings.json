@@ -14,6 +14,9 @@
     "stdio.h": "c",
     "cal_led_device.h": "c",
     "kal_led_device.h": "c",
-    "led_test.h": "c"
+    "led_test.h": "c",
+    "fan_device.h": "c",
+    "kal_time.h": "c",
+    "fan_test.h": "c"
   }
 }
