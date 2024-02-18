@@ -1,6 +1,6 @@
 /**
- * @file    driver_led.c
- * @brief   led driver
+ * @file    led_device.c
+ * @brief   led device
  * @author  Jerry Embedded
  */
 

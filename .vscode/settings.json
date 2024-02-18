@@ -18,6 +18,8 @@
     "fan_device.h": "c",
     "kal_time.h": "c",
     "fan_test.h": "c",
-    "ring_buffer.h": "c"
+    "ring_buffer.h": "c",
+    "oled_device.h": "c",
+    "display_device.h": "c"
   }
 }
